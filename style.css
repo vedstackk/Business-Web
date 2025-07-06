@@ -24,42 +24,58 @@ body {
   to { opacity: 1; }
 }
 
-/* === Animated White Grid Background === */
+/* === Animated Point-Size Random White Dots Background === */
 .neon-grid {
   position: fixed;
   top: 0;
   left: 0;
-  width: 200vw;
-  height: 200vh;
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.2) 2px,
-      transparent 2px,
-      transparent 20px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.2) 2px,
-      transparent 2px,
-      transparent 20px
-    );
-  animation: driftGrid 25s linear infinite;
-  z-index: -1;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
-  filter: brightness(1.7) saturate(1.2);
-  opacity: 0.3;
+  z-index: -1;
+  opacity: 1;
+  background: transparent;
+  filter: brightness(1.2) saturate(1.2);
 }
 
-@keyframes driftGrid {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-50vw, -50vh);
-  }
+/* Small, bright, point-size dots */
+.neon-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 4px 1px #fff, 0 0 8px 2px #00ffe7;
+  opacity: 0.95;
+  pointer-events: none;
+  z-index: -1;
+  width: 2px;
+  height: 2px;
+  animation: neon-dot-move 16s linear infinite;
+}
+
+.neon-dot.dot1  { left: 8vw;  top: 10vh;  animation-delay: 0s; }
+.neon-dot.dot2  { left: 92vw; top: 12vh;  animation-delay: 1.2s; }
+.neon-dot.dot3  { left: 20vw; top: 80vh;  animation-delay: 2.4s; }
+.neon-dot.dot4  { left: 70vw; top: 70vh;  animation-delay: 3.6s; }
+.neon-dot.dot5  { left: 40vw; top: 30vh;  animation-delay: 4.8s; }
+.neon-dot.dot6  { left: 60vw; top: 20vh;  animation-delay: 6.0s; }
+.neon-dot.dot7  { left: 15vw; top: 50vh;  animation-delay: 7.2s; }
+.neon-dot.dot8  { left: 85vw; top: 60vh;  animation-delay: 8.4s; }
+.neon-dot.dot9  { left: 50vw; top: 10vh;  animation-delay: 9.6s; }
+.neon-dot.dot10 { left: 30vw; top: 60vh;  animation-delay: 10.8s; }
+.neon-dot.dot11 { left: 75vw; top: 40vh;  animation-delay: 12.0s; }
+.neon-dot.dot12 { left: 60vw; top: 85vh;  animation-delay: 13.2s; }
+.neon-dot.dot13 { left: 10vw; top: 90vh;  animation-delay: 14.4s; }
+.neon-dot.dot14 { left: 95vw; top: 30vh;  animation-delay: 15.6s; }
+.neon-dot.dot15 { left: 25vw; top: 20vh;  animation-delay: 3.3s; }
+.neon-dot.dot16 { left: 55vw; top: 55vh;  animation-delay: 7.7s; }
+
+@keyframes neon-dot-move {
+  0%   { transform: translate(0, 0) scale(1); opacity: 1; }
+  20%  { transform: translate(12vw, -7vh) scale(1.1); opacity: 1; }
+  40%  { transform: translate(-10vw, 10vh) scale(0.85); opacity: 0.8; }
+  60%  { transform: translate(8vw, 12vh) scale(1.18); opacity: 1; }
+  80%  { transform: translate(-14vw, -9vh) scale(1); opacity: 0.85; }
+  100% { transform: translate(0, 0) scale(1); opacity: 1; }
 }
 
 /* === Header === */
@@ -367,6 +383,26 @@ footer {
 
 .footer-links li {
   list-style: none;
+}
+
+.footer-links svg {
+  width: 18px !important;
+  height: 18px !important;
+  min-width: 18px;
+  min-height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+  vertical-align: middle;
+  display: inline-block;
+  fill: #00ffe7 !important;
+  color: #00ffe7 !important;
+  transition: fill 0.2s, color 0.2s;
+}
+
+.footer-links a:hover svg,
+.footer-links a:focus svg {
+  fill: #fff !important;
+  color: #fff !important;
 }
 
 .footer-meta {
