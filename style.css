@@ -179,6 +179,7 @@ body {
   color: #eee;
   font-weight: 600;
   transition: color 0.3s, background 0.3s, transform 0.2s;
+  letter-spacing: 0.04em;
 }
 
 .main-nav a:hover {
@@ -218,6 +219,9 @@ body {
     padding: 0.8rem 1rem;
     border-radius: 6px;
     transition: background-color 0.3s, color 0.3s;
+    font-size: 1.08rem;
+    letter-spacing: 0.09em;
+    word-spacing: 0.05em;
   }
 
   .main-nav a:hover {
