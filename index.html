@@ -188,6 +188,55 @@
     </div>
   </footer>
 
+  <!-- Back to Top Button -->
+  <button id="backToTop" aria-label="Back to top" style="display:none;">
+    <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="arrow-gradient" x1="0" y1="28" x2="28" y2="0" gradientUnits="userSpaceOnUse">
+          <stop stop-color="#0ff1ce"/>
+          <stop offset="1" stop-color="#3a7afe"/>
+        </linearGradient>
+      </defs>
+      <path d="M14 22V6M14 6L7 13M14 6l7 7" stroke="url(#arrow-gradient)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </button>
 </body>
-
+</html>
+    // Show/hide back to top button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        backToTop.style.display = 'block';
+      } else {
+        backToTop.style.display = 'none';
+      }
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
+      transition: opacity 0.2s;
+    }
+    #backToTop:hover {
+      opacity: 1;
+      background: #444;
+    }
+  </style>
+  <script>
+    // Show/hide back to top button
+    const backToTop = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 200) {
+        backToTop.style.display = 'block';
+      } else {
+        backToTop.style.display = 'none';
+      }
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
 </html>
