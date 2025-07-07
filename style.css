@@ -200,18 +200,22 @@ body {
   }
 
   .main-nav.active {
-    max-height: 300px;
+    max-height: 500px; /* Increased to ensure all items fit */
+    overflow-y: auto;
   }
 
   .main-nav ul {
     flex-direction: column;
     padding: 1rem;
     gap: 0.5rem;
+    max-height: 400px; /* Allow scrolling if too many items */
+    overflow-y: auto;
   }
 
   .main-nav li {
     width: 100%;
     text-align: center;
+    display: block;
   }
 
   .main-nav a {
@@ -222,6 +226,10 @@ body {
     font-size: 1.08rem;
     letter-spacing: 0.09em;
     word-spacing: 0.05em;
+    white-space: nowrap; /* Prevent text breaking into FAO */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
 
   .main-nav a:hover {
