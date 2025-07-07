@@ -587,4 +587,69 @@ body {
 #backToTop:active {
   transform: scale(0.97);
 }
-  
+
+/* === FAQ Section === */
+#faq {
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+  padding: 2.5rem 1rem 1.5rem 1rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.faq-list details {
+  background: rgba(0,255,231,0.06);
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  border: 1px solid #23233a;
+  transition: background 0.2s, border 0.2s;
+  color: #fff;
+}
+
+.faq-list details[open] {
+  background: rgba(0,255,231,0.13);
+  border-color: #00ffe7;
+}
+
+.faq-list summary {
+  font-weight: 700;
+  font-size: 1.08rem;
+  color: #00ffe7;
+  cursor: pointer;
+  outline: none;
+  transition: color 0.2s;
+  list-style: none;
+}
+
+.faq-list details[open] summary {
+  color: #fff;
+}
+
+.faq-list p {
+  margin: 0.7rem 0 0 0;
+  color: #ccc;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.faq-list details summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-list details summary:after {
+  content: "▼";
+  float: right;
+  font-size: 0.9em;
+  color: #00ffe7;
+  margin-left: 0.7em;
+  transition: transform 0.2s;
+}
+
+.faq-list details[open] summary:after {
+  transform: rotate(-180deg);
+  color: #fff;
+}
